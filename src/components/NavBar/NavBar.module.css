@@ -21,6 +21,7 @@
   text-align: left;
   padding: 0px 10px;
   background-color: rgb(236, 233, 233);
+  font-family: 'Roboto', sans-serif;
 }
 
 .navBar_searchBar:hover {
@@ -34,6 +35,7 @@
   width: 400px;
   border: none;
   margin: 5px;
+  font-family: 'Roboto', sans-serif;
 }
 
 ::placeholder {
@@ -62,6 +64,7 @@ li {
 a {
   color: #272142;
   text-decoration: none;
+  font-family: 'Roboto', sans-serif;
 }
 
 a:active {
@@ -77,6 +80,7 @@ a:focus {
   outline: none;
   cursor: pointer;
   background: none;
+  font-family: 'Roboto', sans-serif;
 }
 
 .navBar_toggleButton:active {
@@ -93,12 +97,19 @@ a:focus {
   align-items: flex-start;
   position: absolute;
   padding: 5px;
-  top: 60px;
+  top: 50px;
   gap: 5px;
 }
 
+.navBar_toggleListDiv{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
 /* / styles for large screens (e.g. desktop) / */
-@media (min-width: 960px) and (max-width: 1260px) {
+@media (min-width: 961px) and (max-width: 1260px) {
   /* / styles for screens between 1920px and 2559px / */
   .navBar {
     justify-content: space-evenly;
@@ -106,10 +117,11 @@ a:focus {
   .navBar_searchBar > input {
     width: 200px;
   }
+
 }
 
 /* / styles for medium screens (e.g. tablets) / */
-@media (min-width: 768px) and (max-width: 968px) {
+@media (min-width: 768px) and (max-width: 960px) {
   /* / styles for screens between 768px and 1919px / */
   .navBar {
     justify-content: space-evenly;
@@ -123,7 +135,8 @@ a:focus {
     justify-content: space-evenly;
     align-items: center;
     padding: 0px;
-    gap: 2px;
+    margin: 0px;
+    gap: 15px;
   }
 
   .navBar_toggleListMobile {
@@ -133,9 +146,18 @@ a:focus {
     justify-content: space-evenly;
     position: relative;
     padding: 0px;
-    top: 0px;
-    gap: 0px;
+    top: 5px;
+    bottom: 5px;
+   
+    gap: 5px;
   }
+
+  
+}
+
+#navBtn{
+  border: none;
+  background-color: transparent;
 }
 
 /* / styles for small screens (e.g. mobile landscape) / */
@@ -156,7 +178,8 @@ a:focus {
     justify-content: space-evenly;
     align-items: center;
     padding: 0px;
-    gap: 2px;
+    margin: 0px;
+    gap: 15px;
   }
 
   .navBar_toggleListMobile {
@@ -166,17 +189,23 @@ a:focus {
     justify-content: space-evenly;
     position: relative;
     padding: 0px;
-    top: 0px;
-    gap: 0px;
+    top: 5px;
+    bottom: 5px;
+   
+    gap: 5px;
   }
 }
 
 /* / styles for extra small screens (e.g. mobile portrait) / */
 @media (max-width: 479px) {
   /* / styles for screens 479px and below */
+  .navBar_img {
+    margin: 0px 10px;
+   }
   .navBar_searchBtn {
     position: relative;
-    left: 15%;
+    left: 25%;
+    margin: 0px 30px;
   }
 
   .navBar_searchBarMobile {
@@ -218,6 +247,13 @@ a:focus {
     margin: 10px 15px;
   }
 
+  .navBar_menuBtn{
+    position: relative;
+    left: 2%;
+    right: 0%;
+    margin: 0px 10px;
+  }
+
   .navBar_listMobile {
     display: flex;
     position: absolute;
@@ -226,7 +262,8 @@ a:focus {
     justify-content: space-evenly;
     align-items: center;
     padding: 0px;
-    gap: 2px;
+    margin: 0px;
+    gap: 15px;
   }
 
   .navBar_toggleListMobile {
@@ -236,7 +273,8 @@ a:focus {
     justify-content: space-evenly;
     position: relative;
     padding: 0px;
-    top: 0px;
-    gap: 0px;
+    top: 5px;
+    bottom: 5px;
+    gap: 5px;
   }
 }

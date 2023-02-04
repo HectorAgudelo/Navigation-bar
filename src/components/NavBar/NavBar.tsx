@@ -9,7 +9,7 @@ export const NavBar: FC = () => {
   const [isOpenSearch, setIsOpenSearch] = useState<boolean>(false);
   const [toggle, setToggle] = useState<boolean>(false);
   const isMobileSearch = useMediaQuery({ maxWidth: 479 });
-  const isMobileMenu = useMediaQuery({ maxWidth: 967 });
+  const isMobileMenu = useMediaQuery({ maxWidth: 960 });
 
   return (
     <nav className={styles.navBar}>
@@ -17,7 +17,7 @@ export const NavBar: FC = () => {
         <img src={Logo} alt='' className={styles.navBar_img} />
       </a>
       {isMobileSearch ? (
-        <button className={styles.navBar_searchBtn} onClick={() => {setIsOpenSearch(!isOpenSearch)
+        <button className={styles.navBar_searchBtn} id={styles.navBtn} onClick={() => {setIsOpenSearch(!isOpenSearch)
           setIsOpenList(false)}}>
           <FaSearch />
         </button>
@@ -30,7 +30,7 @@ export const NavBar: FC = () => {
             //   value={searchTerm}
             //   onChange={handleChange}
           />
-          <button type='submit' aria-label='Search'>
+          <button id={styles.navBtn} type='submit' aria-label='Search'>
             <FaSearch />
           </button>
         </form>
@@ -44,7 +44,7 @@ export const NavBar: FC = () => {
             //   value={searchTerm}
             //   onChange={handleChange}
           />
-          <button type='submit' aria-label='Search'>
+          <button id={styles.navBtn} type='submit' aria-label='Search'>
             <FaSearch />
           </button>
         </form>
@@ -52,7 +52,7 @@ export const NavBar: FC = () => {
         ''
       )}
       {isMobileMenu ? (
-        <button className='styles.navBar_menuBtn' onClick={() => {setIsOpenList(!isOpenList); setIsOpenSearch(false)}}>
+        <button className={styles.navBar_menuBtn} id={styles.navBtn} onClick={() => {setIsOpenList(!isOpenList); setIsOpenSearch(false)}}>
           <FaBars />
         </button>
       ) : (
@@ -72,13 +72,11 @@ export const NavBar: FC = () => {
               Wishlist
             </a>
           </li>
-          <li className={styles.navBar_buttonProfile}>
-            <button
-              className={styles.navBar_toggleButton}
-              onClick={() => setToggle(!toggle)}
-            >
-              My Account
-            </button>
+          <div className={styles.navBar_toggleListDiv}>
+              <li    className={styles.navBar_toggleButton} onClick={() => setToggle(!toggle)}>
+
+              Account
+           </li>
             {toggle && (
               <ul className={styles.navBar_toggleList}>
                 <li>
@@ -98,7 +96,9 @@ export const NavBar: FC = () => {
                 </li>
               </ul>
             )}
-          </li>
+          </div>
+        
+         
           <li>
             <a href='#' tabIndex={0} aria-label='ShoppingCar'>
               <FaShoppingCart />
@@ -123,13 +123,14 @@ export const NavBar: FC = () => {
               Wishlist
             </a>
           </li>
-          <li className={styles.navBar_buttonProfile}>
-            <button
-              className={styles.navBar_toggleButton}
-              onClick={() => setToggle(!toggle)}
-            >
-              My Account
-            </button>
+          <div className={styles.navBar_toggleListDiv}>
+            <li  className={styles.navBar_toggleButton} onClick={() => setToggle(!toggle)}>
+           
+             My Account
+              
+            </li>
+              
+           
             {toggle && (
               <ul className={styles.navBar_toggleListMobile}>
                 <li>
@@ -149,7 +150,9 @@ export const NavBar: FC = () => {
                 </li>
               </ul>
             )}
-          </li>
+          </div>
+          
+          
           <li>
             <a href='#' tabIndex={0} aria-label='ShoppingCar'>
               <FaShoppingCart style={{height:'1rem'}} />
